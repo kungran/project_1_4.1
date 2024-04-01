@@ -24,103 +24,54 @@ window.addEventListener("load", function () {
     });
   });
 
-  // 세번째 모달 창 열기
-  document.getElementById("youtube-link-3").addEventListener("click", function () {
-    document.getElementById("youtube-modal-3").style.display = "block";
-  });
-  // 세번째 모달 창 닫기
-  document.querySelectorAll("#youtube-modal-3 .s-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("youtube-modal-3").style.display = "none";
-    });
-  });
+  // // 세번째 모달 창 열기
+  // document.getElementById("youtube-link-3").addEventListener("click", function () {
+  //   document.getElementById("youtube-modal-3").style.display = "block";
+  // });
+  // // 세번째 모달 창 닫기
+  // document.querySelectorAll("#youtube-modal-3 .s-close").forEach(function (element) {
+  //   element.addEventListener("click", function () {
+  //     document.getElementById("youtube-modal-3").style.display = "none";
+  //   });
+  // });
 
-  // 네번째 모달 창 열기
-  document.getElementById("youtube-link-4").addEventListener("click", function () {
-    document.getElementById("youtube-modal-4").style.display = "block";
-  });
-  // 네번째 모달 창 닫기
-  document.querySelectorAll("#youtube-modal-4 .s-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("youtube-modal-4").style.display = "none";
-    });
-  });
+  // // 네번째 모달 창 열기
+  // document.getElementById("youtube-link-4").addEventListener("click", function () {
+  //   document.getElementById("youtube-modal-4").style.display = "block";
+  // });
+  // // 네번째 모달 창 닫기
+  // document.querySelectorAll("#youtube-modal-4 .s-close").forEach(function (element) {
+  //   element.addEventListener("click", function () {
+  //     document.getElementById("youtube-modal-4").style.display = "none";
+  //   });
+  // });
 
-  // 다섯번째 모달 창 열기
-  document.getElementById("youtube-link-5").addEventListener("click", function () {
-    document.getElementById("youtube-modal-5").style.display = "block";
-  });
-  // 다섯번째 모달 창 닫기
-  document.querySelectorAll("#youtube-modal-5 .s-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("youtube-modal-5").style.display = "none";
-    });
-  });
+  // // 다섯번째 모달 창 열기
+  // document.getElementById("youtube-link-5").addEventListener("click", function () {
+  //   document.getElementById("youtube-modal-5").style.display = "block";
+  // });
+  // // 다섯번째 모달 창 닫기
+  // document.querySelectorAll("#youtube-modal-5 .s-close").forEach(function (element) {
+  //   element.addEventListener("click", function () {
+  //     document.getElementById("youtube-modal-5").style.display = "none";
+  //   });
+  // });
 
-  // 여섯번째 모달 창 열기
-  document.getElementById("youtube-link-6").addEventListener("click", function () {
-    document.getElementById("youtube-modal-6").style.display = "block";
-  });
-  // 여섯번째 모달 창 닫기
-  document.querySelectorAll("#youtube-modal-6 .s-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("youtube-modal-6").style.display = "none";
-    });
-  });
+  // // 여섯번째 모달 창 열기
+  // document.getElementById("youtube-link-6").addEventListener("click", function () {
+  //   document.getElementById("youtube-modal-6").style.display = "block";
+  // });
+  // // 여섯번째 모달 창 닫기
+  // document.querySelectorAll("#youtube-modal-6 .s-close").forEach(function (element) {
+  //   element.addEventListener("click", function () {
+  //     document.getElementById("youtube-modal-6").style.display = "none";
+  //   });
+  // });
 
-  // FAQ 모달 창 열기
-  document.getElementById("FAQ-btn").addEventListener("click", function () {
-    document.getElementById("FAQ-modal").style.display = "block";
-  });
-  // FAQ 모달 창 닫기
-  document.querySelectorAll("#FAQ-modal .q-m-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("FAQ-modal").style.display = "none";
-    });
-  });
+ 
+ 
 
-  //   신청조회 모달 창 열기
-  document.getElementById("search-btn").addEventListener("click", function () {
-    document.getElementById("search-modal").style.display = "block";
-  });
-  //   신청조회 모달 창 닫기
-  document.querySelectorAll("#search-modal .q-m-close").forEach(function (element) {
-    element.addEventListener("click", function () {
-      document.getElementById("search-modal").style.display = "none";
-    });
-  });
-
-  //   top 버튼 스크롤 기능
-  const topBtn = document.getElementById("top-btn");
-
-  topBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    console.log(window.scrollY);
-
-    if (window.scrollY === 0) {
-      window.scrollTo({
-        top: 1050, //맨 아래 스크롤값 2952
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  });
-
-  // 화살표 이미지 회전
-  const topBtnImg = document.getElementById("top-btn-img");
-  window.addEventListener("scroll", function (scTop) {
-    scTop = window.document.documentElement.scrollTop;
-    if (scTop > 0) {
-      topBtnImg.classList.add("up");
-    } else {
-      topBtnImg.classList.remove("up");
-    }
-  });
+ 
 });
 
 //쇼츠 닫기버튼 클릭시 계속 재생되는 문제 해결
