@@ -92,7 +92,40 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWM62CNP" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <!-- hun -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- 모달 -->
+    <div class="modal-wrap" id="popup">
+      <div class="modal-main">
+        <div class="modal-notice">
+          <div class="modal-img"></div>
+          <button class="modal-bt" id="quiz-button">퀴즈 풀러 가기</button>
+        </div>
+        <p class="closeWrap">
+          <input type="checkbox" name="expiresChk" id="expiresChk" />
+          <label for="expiresChk">하루 동안 이 창 열지않기</label>
+          <button class="closeBtn">닫기</button>
+        </p>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".modal-wrap").show();
+        var $expChk = $("#expiresChk");
+        $(".closeBtn").on("click", function () {
+          //1일 동안 이 창 열지않기
+          if ($expChk.is(":checked")) {
+            // popup이라는 이름의 쿠키를 설정
+            $.cookie("popup", "none", { expires: 1, path: "/" });
+          }
+          $(".modal-wrap").hide();
+        });
+        if ($.cookie("popup") == "none") {
+          $(".modal-wrap").hide();
+        }
+      });
+    </script>
     <div class="wrap">
       <!-- min -->
       <!-- top menu -->
@@ -535,40 +568,6 @@
         </div>
       </section>
 
-      <!-- hun -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-      <!-- 모달 -->
-      <div class="modal-wrap" id="popup">
-        <div class="modal-main">
-          <div class="modal-notice">
-            <div class="modal-img"></div>
-            <button class="modal-bt" id="quiz-button">퀴즈 풀러 가기</button>
-          </div>
-          <p class="closeWrap">
-            <input type="checkbox" name="expiresChk" id="expiresChk" />
-            <label for="expiresChk">하루 동안 이 창 열지않기</label>
-            <button class="closeBtn">닫기</button>
-          </p>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function () {
-          $(".modal-wrap").show();
-          var $expChk = $("#expiresChk");
-          $(".closeBtn").on("click", function () {
-            //1일 동안 이 창 열지않기
-            if ($expChk.is(":checked")) {
-              // popup이라는 이름의 쿠키를 설정
-              $.cookie("popup", "none", { expires: 1, path: "/" });
-            }
-            $(".modal-wrap").hide();
-          });
-          if ($.cookie("popup") == "none") {
-            $(".modal-wrap").hide();
-          }
-        });
-      </script>
       <footer>
         <div class="ft_inner">
           <div class="ft-top">
