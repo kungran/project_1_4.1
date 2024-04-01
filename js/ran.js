@@ -68,27 +68,6 @@ window.addEventListener("load", function () {
     });
   });
 
-  //쇼츠 닫기버튼 클릭시 계속 재생되는 문제 해결
-  $(document).ready(function () {
-    // 모든 모달에 대한 참조를 담을 객체
-    var modals = {};
-    // 모달 ID들을 배열로 초기화
-    var modalIds = ["youtube-modal", "youtube-modal-2", "youtube-modal-3", "youtube-modal-4", "youtube-modal-5", "youtube-modal-6"];
-    // 각 모달 ID에 대해 반복하며 modals 객체에 jQuery 객체로 저장
-    $.each(modalIds, function (index, value) {
-      modals[value] = $("#" + value);
-    });
-    // 모든 ".s-close" 버튼에 대한 클릭 이벤트 핸들러
-    $(".s-close").click(function () {
-      // 클릭된 버튼이 속한 모달의 ID를 찾음
-      var modalId = $(this).closest(".s-modal").attr("id");
-      // 해당 모달 내의 iframe의 src 속성을 빈 문자열로 설정
-      modals[modalId].find("iframe").attr("src", "");
-      // 선택적: 해당 모달을 숨김
-      // modals[modalId].hide();
-    });
-  });
-
   // FAQ 모달 창 열기
   document.getElementById("FAQ-btn").addEventListener("click", function () {
     document.getElementById("FAQ-modal").style.display = "block";
@@ -97,13 +76,6 @@ window.addEventListener("load", function () {
   document.querySelectorAll("#FAQ-modal .q-m-close").forEach(function (element) {
     element.addEventListener("click", function () {
       document.getElementById("FAQ-modal").style.display = "none";
-    });
-  });
-  // FAQ 모달 아코디언 메뉴기능
-  $(document).ready(function () {
-    $(".accordion-header").click(function () {
-      $(this).next(".accordion-content").slideToggle();
-      $(".accordion-content").not($(this).next()).slideUp();
     });
   });
 
@@ -148,5 +120,32 @@ window.addEventListener("load", function () {
     } else {
       topBtnImg.classList.remove("up");
     }
+  });
+});
+
+//쇼츠 닫기버튼 클릭시 계속 재생되는 문제 해결
+$(document).ready(function () {
+  // 모든 모달에 대한 참조를 담을 객체
+  var modals = {};
+  // 모달 ID들을 배열로 초기화
+  var modalIds = ["youtube-modal", "youtube-modal-2", "youtube-modal-3", "youtube-modal-4", "youtube-modal-5", "youtube-modal-6"];
+  // 각 모달 ID에 대해 반복하며 modals 객체에 jQuery 객체로 저장
+  $.each(modalIds, function (index, value) {
+    modals[value] = $("#" + value);
+  });
+  // 모든 ".s-close" 버튼에 대한 클릭 이벤트 핸들러
+  $(".s-close").click(function () {
+    // 클릭된 버튼이 속한 모달의 ID를 찾음
+    var modalId = $(this).closest(".s-modal").attr("id");
+    // 해당 모달 내의 iframe의 src 속성을 빈 문자열로 설정
+    modals[modalId].find("iframe").attr("src", "");
+    // 선택적: 해당 모달을 숨김
+    // modals[modalId].hide();
+  });
+  // FAQ 모달 아코디언 메뉴기능
+
+  $(".accordion-header").click(function () {
+    $(this).next(".accordion-content").slideToggle();
+    $(".accordion-content").not($(this).next()).slideUp();
   });
 });
