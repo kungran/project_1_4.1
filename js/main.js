@@ -520,19 +520,5 @@ window.onload = function () {
     document.getElementById('quiz-area').scrollIntoView(); // 퀴즈 영역으로 스크롤 이동
   });
 };
-$(document).ready(function(){
-  $(".modal-wrap").show();
-  var $expChk = $("#expiresChk");
-  $(".closeBtn").on("click", function () {
-    //1일 동안 이 창 열지않기
-    if ($expChk.is(":checked")) {
-      // popup이라는 이름의 쿠키를 설정
-      $.cookie("popup", "none", { expires: 1, path: "/" });
-    }
-    $(".modal-wrap").hide();
-  });
-  if ($.cookie("popup") == "none") {
-    $(".modal-wrap").hide();
-  }
-});
+
 
